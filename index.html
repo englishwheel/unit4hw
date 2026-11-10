@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 B2 — Hobbies, Sport and Games</title>
+<style>
+  :root{
+    --bg:#f4f7fb; --card:#fff; --primary:#2563eb; --primary-dark:#1e40af;
+    --ok:#16a34a; --bad:#dc2626; --border:#e2e8f0; --text:#1e293b; --muted:#64748b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.55;
+  }
+  header{
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    color:#fff; padding:32px 20px; text-align:center;
+  }
+  header h1{margin:0 0 8px; font-size:1.7rem}
+  header p{margin:0; opacity:.9}
+  main{max-width:950px; margin:0 auto; padding:24px 16px 100px}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:22px 20px; margin-bottom:22px; box-shadow:0 4px 14px rgba(0,0,0,.04);
+  }
+  .card h2{
+    margin:0 0 6px; font-size:1.15rem; color:var(--primary-dark);
+    display:flex; align-items:center; gap:8px;
+  }
+  .card h2 .num{
+    background:var(--primary); color:#fff; width:26px; height:26px;
+    border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+    font-size:.85rem; flex-shrink:0;
+  }
+  .hint{color:var(--muted); font-size:.9rem; margin:0 0 16px}
+  .q{margin-bottom:18px; padding-bottom:12px; border-bottom:1px dashed #e2e8f0}
+  .q:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0}
+  .prompt{margin-bottom:10px; font-size:1.05rem}
+  .options{display:flex; flex-wrap:wrap; gap:8px}
+  .options label{
+    display:inline-flex; align-items:center; gap:6px;
+    border:1px solid var(--border); border-radius:8px; padding:6px 12px;
+    cursor:pointer; background:#f8fafc; transition:.15s;
+  }
+  .options label:hover{border-color:var(--primary); background:#eff6ff}
+  .options input{accent-color:var(--primary)}
+  input[type="text"]{
+    font:inherit; padding:10px 12px; border:1px solid var(--border);
+    border-radius:8px; background:#f8fafc; width:100%; max-width:400px;
+  }
+  input[type="text"]:focus{outline:2px solid #bfdbfe; border-color:var(--primary)}
+  .feedback{font-size:.9rem; margin-top:8px; font-weight:600}
+  .feedback.ok{color:var(--ok)}
+  .feedback.bad{color:var(--bad)}
+  .feedback.ok::before{content:"✔ "}
+  .feedback.bad::before{content:"✘ "}
+  .btn-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
+  button{
+    font:inherit; font-weight:600; cursor:pointer; border:none; border-radius:10px;
+    padding:12px 22px; transition:.15s;
+  }
+  .btn-primary{background:var(--primary); color:#fff}
+  .btn-primary:hover{background:var(--primary-dark)}
+  .btn-ghost{background:#fff; color:var(--primary-dark); border:1px solid var(--primary)}
+  .btn-ghost:hover{background:#eff6ff}
+  .score{
+    position:fixed; bottom:0; left:0; right:0; z-index:10;
+    background:#1e293b; color:#fff; padding:14px 20px;
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:center;
+    box-shadow:0 -4px 14px rgba(0,0,0,.1);
+  }
+  .score .val{font-size:1.3rem; font-weight:700; margin:0 5px;}
+  .score .val.ok{color:#4ade80}
+  .score .val.bad{color:#f87171}
+  .score .msg{font-size:.95rem; opacity:.9}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Unit 4 — Hobbies, Sport and Games</h1>
+  <p>Phrasal Verbs, Collocations, Word Patterns & Word Formation</p>
+</header>
+
+<main>
+
+  <!-- ================= PHRASAL VERBS ================= -->
+  <section class="card" id="sec-phrasal">
+    <h2><span class="num">2</span> Phrasal verbs</h2>
+    <p class="hint">Впишите пропущенный предлог или глагол в нужной форме (маленькими буквами).</p>
+
+    <div class="q" data-answer="take">
+      <div class="prompt">1. Swimming is one of the best sports you can <b>___</b> up.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="off">
+      <div class="prompt">2. We can't afford to put <b>___</b> our training if we want to excel in the upcoming race.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="go">
+      <div class="prompt">3. Our school encourages students to <b>___</b> in for various sports to promote a healthy lifestyle.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="up">
+      <div class="prompt">4. I don't want to put <b>___</b> with such a rude attitude towards me.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="bring">
+      <div class="prompt">5. FIFA decided to <b>___</b> forward the start date of the tournament.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">6. Although he was pretty bad at karate, he foolishly decided to join <b>___</b> a regional competition.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on">
+      <div class="prompt">7. After a brief injury timeout, the player was determined to carry <b>___</b> and help his team win.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="out">
+      <div class="prompt">8. When skiing down the slope, skiers must look <b>___</b> for obstacles and other skiers.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="got">
+      <div class="prompt">9. I have always wanted to start running but never <b>___</b> round to taking those first steps.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="off">
+      <div class="prompt">10. At first, we were excited about running a marathon, but after a few training sessions, we went <b>___</b> the idea.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ================= TRANSLATION PHRASAL ================= -->
+  <section class="card" id="sec-trans-phrasal">
+    <h2><span class="num">3</span> Translate (Phrasal Verbs)</h2>
+    <p class="hint">Впишите правильную форму фразового глагола на английском.</p>
+
+    <div class="q" data-answer="put off">
+      <div class="prompt">1. Never <b>___</b> (<i>откладывай</i>) till tomorrow what you can do today.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="took up">
+      <div class="prompt">2. Roger <b>___</b> (<i>занялся</i>) jogging for a while, but soon lost interest.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="put up">
+      <div class="prompt">3. I will not <b>___</b> (<i>терпеть</i>) with your bad behaviour any longer!</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="go in">
+      <div class="prompt">4. Are you planning to <b>___</b> (<i>участвовать</i>) for any winter sports like skiing or snowboarding?</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="carry on">
+      <div class="prompt">5. Although Maggie felt tired, she was determined to <b>___</b> (<i>продолжать</i>) running until the finish line.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="got round to">
+      <div class="prompt">6. She <b>___</b> (<i>приступила к</i>) trying yoga and found it to be a relaxing and enjoyable activity.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="join in">
+      <div class="prompt">7. At work, you may have a hobby you'd like to share or <b>___</b> (<i>присоединиться</i>) with colleagues.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="bring forward">
+      <div class="prompt">8. Due to the rainy weather, they had to <b>___</b> (<i>перенести</i>) the start of the football match by an hour.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ================= PREPOSITIONS ================= -->
+  <section class="card" id="sec-preps">
+    <h2><span class="num">4</span> Fill in prepositions</h2>
+    <p class="hint">Впишите только предлог.</p>
+
+    <div class="q" data-answer="to">
+      <div class="prompt">1. Do people who can play an instrument listen <b>___</b> music differently to those who don't?</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="for">
+      <div class="prompt">2. Olivia has an obvious talent <b>___</b> creative cookery.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="of">
+      <div class="prompt">3. Rock climbing is an extreme sport for people who are afraid <b>___</b> heights.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on">
+      <div class="prompt">4. If you want to excel in sports, make sure you're always <b>___</b> time for training sessions.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="of">
+      <div class="prompt">5. There was no one to help me, so I just had to make the best <b>___</b> it.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="for">
+      <div class="prompt">6. <b>___</b> the time being, this is the only option available to you.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="from">
+      <div class="prompt">7. The best way to stop <b>___</b> hurting yourself when exercising is to take it slow.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="with / against">
+      <div class="prompt">8. There are sports where women can compete <b>___</b> men and win. (введите предлог)</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="of">
+      <div class="prompt">9. As a child Alexander was fond <b>___</b> various sports but finally he focused on football.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="with / among">
+      <div class="prompt">10. Cycling has become increasingly popular <b>___</b> commuters in urban areas. (введите предлог)</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">11. Keko arrived just <b>___</b> time to launch a promising pass from the left.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="from">
+      <div class="prompt">12. Sports fans tend to gain more pleasure <b>___</b> a close loss than a blow-out win.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="of">
+      <div class="prompt">13. When she was offered the job, she knew it was the chance <b>___</b> a lifetime.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on">
+      <div class="prompt">14. In soccer, the goalkeeper stands <b>___</b> the opposite side of the field from the attackers.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">15. Injuries often result in pain and this <b>___</b> turn leads to muscle weakness.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="of">
+      <div class="prompt">16. He wasn't sure <b>___</b> the rules of the game, so he decided to watch a tutorial video.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">17. Being involved <b>___</b> baseball, he dreams of playing for a professional team one day.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on">
+      <div class="prompt">18. To excel in swimming, you need to concentrate <b>___</b> your breathing and stroke rhythm.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="from">
+      <div class="prompt">19. Everyone has the right to experience sport in a safe environment, free <b>___</b> abuse and bullying.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="for">
+      <div class="prompt">20. With a busy life, full-time work/studies, family and friends it can be hard to find time <b>___</b> training.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">21. Your height is determined by your genetics, so you are likely be close <b>___</b> height to your parents.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="from">
+      <div class="prompt">22. When vigorously training for a single sport, athletes tend to get burned out <b>___</b> time to time.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in">
+      <div class="prompt">23. We take pleasure <b>___</b> attending live sporting events to experience the excitement and energy of the crowd.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on">
+      <div class="prompt">24. According to the latest data, the average person spends about 7 hours per day <b>___</b> screens connected to the internet.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="for">
+      <div class="prompt">25. About 600 Paralympic athletes competed <b>___</b> more than 78 gold medals at the Beijing 2022 Winter Paralympic Games.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ================= TRANSLATION COLLOCATIONS ================= -->
+  <section class="card" id="sec-trans-colloc">
+    <h2><span class="num">5</span> Translate (Collocations)</h2>
+    <p class="hint">Впишите пропущенные слова на английском.</p>
+
+    <div class="q" data-answer="do your best">
+      <div class="prompt">1. It doesn't matter if you fail, just <b>___</b> (<i>сделай всё возможное</i>).</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in time">
+      <div class="prompt">2. I got home just <b>___</b> (<i>вовремя</i>) — it was starting to rain.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="it takes me">
+      <div class="prompt">3. <b>___</b> (<i>У меня уходит</i>) about 20 minutes to complete a routine.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in turn / in turns">
+      <div class="prompt">4. We take it <b>___</b> (<i>по очереди</i>) to do the household chores.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="compete with / compete against">
+      <div class="prompt">5. Will women athletes ever be able to <b>___</b> (<i>соревноваться с</i>) men?</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on time">
+      <div class="prompt">6. Linda is always <b>___</b> (<i>вовремя</i>) for school. By contrast, Vicki is always late.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="stop you from">
+      <div class="prompt">7. Try to overcome anything that might <b>___</b> (<i>помешать тебе</i>) becoming more active.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="in height">
+      <div class="prompt">8. By correcting your posture, your jumps will increase <b>___</b> (<i>по высоте</i>) due to potential energy.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="take your time">
+      <div class="prompt">9. If you're already late, <b>___</b> (<i>не торопись</i>). You can't be late twice.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="popular with / popular among">
+      <div class="prompt">10. Soccer, also known as football, is <b>___</b> (<i>популярен среди</i>) millions of fans worldwide.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="talent for">
+      <div class="prompt">11. Not everyone has a <b>___</b> (<i>талант к</i>) sport, they just work hard for their success.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="find it difficult">
+      <div class="prompt">12. Athletes often report that they <b>___</b> (<i>им сложно</i>) to perform when it matters most.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="make sure">
+      <div class="prompt">13. If you're going for a run in the sun, <b>___</b> (<i>убедись</i>) to use sunscreen to protect your skin.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="take pleasure">
+      <div class="prompt">14. I <b>___</b> (<i>получаю удовольствие</i>) in finding something new every time I practise yoga.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="fond of">
+      <div class="prompt">15. The British are very <b>___</b> (<i>увлекаются</i>) sport, but many people prefer to watch rather than take part.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="leisure time / free time / spare time">
+      <div class="prompt">16. Young people devote <b>___</b> (<i>свободное время</i>) to sports to maintain good health and body image.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="drives">
+      <div class="prompt">17. It <b>___</b> (<i>бесит</i>) me mad when schools turn 'Sports Day' into an event that's about the taking part not about doing sport.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="find time for">
+      <div class="prompt">18. For many people, having a busy lifestyle can make it difficult to <b>___</b> (<i>найти время для</i>) exercise.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="get pleasure / gain pleasure">
+      <div class="prompt">19. People can <b>___</b> (<i>получить удовольствие</i>) from a wide range of extreme water sports activities.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="on the opposite side">
+      <div class="prompt">20. In pickleball, the ball must bounce <b>___</b> (<i>на противоположной стороне</i>) of the court before it is returned to the serving side.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ================= ONE WORD BOTH SENTENCES ================= -->
+  <section class="card" id="sec-oneword">
+    <h2><span class="num">6</span> One word for both</h2>
+    <p class="hint">Впишите одно слово, которое подходит для обоих предложений.</p>
+
+    <div class="q" data-answer="time">
+      <div class="prompt">1. Singles spend more <b>___</b> on leisure activities than married people.<br>These rules and regulations may change from <b>___</b> to time.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="stop">
+      <div class="prompt">2. The referee blew the whistle to <b>___</b> the game.<br>The goalkeeper made a fantastic save to <b>___</b> the ball from going into the net.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="best">
+      <div class="prompt">3. It doesn't matter if you fail, just do your <b>___</b>.<br>Athletic youngsters made the <b>___</b> of a poor pitch to take points.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="time">
+      <div class="prompt">4. <b>___</b> passes so quickly when you're enjoying yourself.<br>In doing sport, take your <b>___</b> and move at your own pace.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="takes">
+      <div class="prompt">5. It <b>___</b> me half an hour to get to the gym.<br>Competing to a high level in sport <b>___</b> up a lot of your time.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="make">
+      <div class="prompt">6. The first step to a healthy lifestyle is to <b>___</b> time for exercise.<br>Always <b>___</b> sure your muscles are warmed-up before you stretch!</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="pleasure">
+      <div class="prompt">7. Sports fans take <b>___</b> in cheering for their favorite team.<br>Marina gets <b>___</b> from the adrenaline rush of snowboarding down the slopes.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="time">
+      <div class="prompt">8. It's high <b>___</b> to slow down and enjoy life.<br>Even if you have a busy schedule, you can find <b>___</b> to do something you enjoy.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="take">
+      <div class="prompt">9. On a long-distance trip, my parents <b>___</b> turns driving to get some shut-eye.<br>How much time does it <b>___</b> to see the results of a new diet?</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="go">
+      <div class="prompt">10. Failing your driving test on the first <b>___</b> makes you a better driver in long run.<br>The Sports and Leisure Centre provides a unique opportunity to have a <b>___</b> at a wide range of activities.</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ================= WORD FORMATION ================= -->
+  <section class="card" id="sec-formation">
+    <h2><span class="num">7</span> Word formation</h2>
+    <p class="hint">Измените форму слова из скобок и впишите его (маленькими буквами).</p>
+
+    <div class="q" data-answer="trainer">
+      <div class="prompt">1. Your personal <b>___</b> is your tutor, your motivator and your spotter. [TRAIN]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="competitors">
+      <div class="prompt">2. A record number of <b>___</b> took part in the half marathon. [COMPETE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="opposite">
+      <div class="prompt">3. In a game of tug-of-war, two teams pull the rope in <b>___</b> directions. [OPPOSE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="medallist">
+      <div class="prompt">4. Luke was a European silver <b>___</b> in the 1 500 metres freestyle. [MEDAL]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="fortunately">
+      <div class="prompt">5. <b>___</b>, the injury was minor and required little specific treatment. [FORTUNE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="enjoyment">
+      <div class="prompt">6. My <b>___</b> of the film was spoiled by very young children in the cinema. [ENJOY]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="opponents">
+      <div class="prompt">7. Professional players study their <b>___</b> before a match. [OPPOSE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="losses">
+      <div class="prompt">8. You should be aware of your emotions when handling wins and <b>___</b>. [LOSE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="association">
+      <div class="prompt">9. FIFA is the international governing body of <b>___</b> football, beach soccer, and futsal. [ASSOCIATE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="unfortunately">
+      <div class="prompt">10. <b>___</b>, there's nothing I can do about your problem. [FORTUNE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="equipment">
+      <div class="prompt">11. The right fishing <b>___</b>, such as rods and reels, can make a big difference in a fisherman's success. [EQUIP]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="allowance">
+      <div class="prompt">12. With his monthly <b>___</b>, Jake can afford to join a gym and work on his fitness goals. [ALLOW]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="competitions">
+      <div class="prompt">13. The best athletes are selected to represent their country in international <b>___</b>. [COMPETE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="uninteresting">
+      <div class="prompt">14. Running on a treadmill for hours can be quite <b>___</b> compared to outdoor jogging. [INTERESTING]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="misfortune">
+      <div class="prompt">15. The Doping Tribunal concluded that the athlete was the "sole author of his <b>___</b>". [FORTUNE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="competition">
+      <div class="prompt">16. <b>___</b> between sports for fans' money and attention is increasingly fierce. [COMPETE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="maintenance">
+      <div class="prompt">17. To keep all sports equipment functional, it is critical to run routine <b>___</b> sessions. [MAINTAIN]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="practical">
+      <div class="prompt">18. From a <b>___</b> point of view, there is no game in which the player is not likely to get hurt during the game. [PRACTICE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="equipped">
+      <div class="prompt">19. The Origin Gym is a brand new, fully <b>___</b> gym, designed to support your journey to full fitness. [EQUIP]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="knowledge">
+      <div class="prompt">20. LinkedIn presents an opportunity for experts like sports writers to showcase their <b>___</b> and build an audience. [KNOW]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="competitive">
+      <div class="prompt">21. Engaging in <b>___</b> sports can provide you with a set of skills that can play a critical role in your life. [COMPETE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="impractical">
+      <div class="prompt">22. You might be tempted to buy a super-quick sports bike, but it's highly <b>___</b> for a new rider. [PRACTICAL]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="lost">
+      <div class="prompt">23. There have been many hardships and <b>___</b> opportunities over the past year, but it is time to look ahead. [LOSE]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="interestingly">
+      <div class="prompt">24. <b>___</b>, the underdog team managed to secure a surprising victory in the championship game. [INTERESTING]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="enjoyable">
+      <div class="prompt">25. The researchers developed a scale called the Pittsburgh <b>___</b> Activities Test to measure the effect of hobbies and leisure pastime on overall health. [ENJOY]</div>
+      <input type="text" placeholder="ваш ответ">
+      <div class="feedback"></div>
+    </div>
+  </section>
+
+  <div class="btn-row" style="margin-bottom: 40px;">
+    <button class="btn-primary" id="checkBtn">Проверить всё</button>
+    <button class="btn-ghost" id="resetBtn">Сбросить</button>
+  </div>
+
+</main>
+
+<div class="score" id="scoreBar">
+  <div>
+    <span>Результат: </span>
+    <span class="val" id="scoreVal">—</span>
+    <span id="scoreMsg" class="msg"></span>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $ = function(s, r) { return (r || document).querySelector(s); };
+  var $$ = function(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  // Функция нормализации ответа: убирает дефисы, лишние пробелы, приводит к нижнему регистру
+  function norm(s){
+    if (!s) return '';
+    return s.toString()
+      .toLowerCase()
+      .replace(/-/g, ' ')       // дефисы заменяем на пробелы
+      .replace(/\s+/g, ' ')     // несколько пробелов в один
+      .trim();
+  }
+
+  var mistakeCounts = new WeakMap();
+
+  function getMistakes(el){
+    return mistakeCounts.get(el) || 0;
+  }
+  function incMistakes(el){
+    var n = getMistakes(el) + 1;
+    mistakeCounts.set(el, n);
+    return n;
+  }
+
+  function setFeedback(fbEl, ok, correctText, mistakes){
+    fbEl.classList.remove('ok', 'bad');
+    if(ok){
+      fbEl.textContent = 'Верно';
+      fbEl.classList.add('ok');
+      return;
+    }
+    if(mistakes >= 3){
+      fbEl.textContent = 'Неверно. Правильный ответ: ' + correctText;
+    } else {
+      var left = 3 - mistakes;
+      fbEl.textContent = 'Неверно. Попробуйте ещё раз (до подсказки осталось: ' + left + ').';
+    }
+    fbEl.classList.add('bad');
+  }
+
+  function checkTextQuestion(qEl){
+    var answerRaw = qEl.getAttribute('data-answer');
+    var input = qEl.querySelector('input[type=text]');
+    var fb = qEl.querySelector('.feedback');
+    
+    if(!input.value.trim()){
+      fb.classList.remove('ok', 'bad');
+      fb.textContent = 'Нет ответа';
+      fb.classList.add('bad');
+      return false;
+    }
+
+    var userVal = norm(input.value);
+    var ok = false;
+
+    // Разделяем правильные ответы, если их несколько (через слэш)
+    var possibleAnswers = answerRaw.split('/');
+    for (var i = 0; i < possibleAnswers.length; i++) {
+        if (userVal === norm(possibleAnswers[i])) {
+            ok = true;
+            break;
+        }
+    }
+
+    var mistakes = ok ? getMistakes(qEl) : incMistakes(qEl);
+    
+    // Для вывода правильного ответа берем первый вариант из списка
+    var displayAnswer = possibleAnswers[0].trim();
+    if (possibleAnswers.length > 1) {
+        displayAnswer = possibleAnswers.join(' ИЛИ ');
+    }
+    
+    setFeedback(fb, ok, displayAnswer, mistakes);
+    return ok;
+  }
+
+  function checkAll(){
+    var total = 0, correct = 0;
+
+    $$('.q').forEach(function(q){
+      if(q.querySelector('input[type=text]')){
+        total++;
+        if(checkTextQuestion(q)) correct++;
+      }
+    });
+
+    var val = $('#scoreVal');
+    var msg = $('#scoreMsg');
+    val.textContent = correct + ' / ' + total;
+    val.classList.remove('ok', 'bad');
+
+    var pct = total ? Math.round(correct / total * 100) : 0;
+    if(pct === 100){
+      val.classList.add('ok');
+      msg.textContent = 'Отлично! Всё верно!';
+    } else if(pct >= 70){
+      val.classList.add('ok');
+      msg.textContent = '(' + pct + '%) Хороший результат.';
+    } else {
+      val.classList.add('bad');
+      msg.textContent = '(' + pct + '%) Повторите материал и попробуйте снова.';
+    }
+  }
+
+  function resetAll(){
+    $$('input[type=text]').forEach(function(i){ i.value = ''; });
+    $$('.feedback').forEach(function(f){ f.textContent = ''; f.classList.remove('ok', 'bad'); });
+    $$('.q').forEach(function(el){ mistakeCounts.delete(el); });
+    var val = $('#scoreVal');
+    val.textContent = '—';
+    val.classList.remove('ok', 'bad');
+    $('#scoreMsg').textContent = '';
+  }
+
+  $('#checkBtn').addEventListener('click', checkAll);
+  $('#resetBtn').addEventListener('click', resetAll);
+
+  // Автопроверка по нажатию Enter
+  $$('input[type=text]').forEach(function(inp){
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); checkAll(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
